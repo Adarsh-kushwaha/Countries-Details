@@ -11,7 +11,6 @@ export default function App() {
   const fetchData = async () => {
     const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
     const data = await res.json();
-    console.log(data);
     setResponse(data);
   };
 
@@ -61,7 +60,13 @@ export default function App() {
               return (
                 <div className="flex justify-center" key={res.tld}>
                   <div className="rounded-lg shadow-lg bg-white max-w-sm">
-                    <img className="rounded-t-lg" src={res.flags.svg} alt="" />
+                    <img
+                      className="rounded-t-lg"
+                      src={res.flags.svg}
+                      alt=""
+                      width="340px"
+                      height="227px"
+                    />
                     <div className="p-4">
                       <h5 className="text-gray-900 text-xl font-medium mb-2">
                         {res.name.common}
